@@ -1,11 +1,22 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from '../App';
+import { ThemeContext, LanguageContext } from '../App';
 import useProductSearch from '../hooks/useProductSearch';
 
 const ProductList = ({ searchQuery }) => {
   const { isDarkTheme } = useContext(ThemeContext);
   // TODO: Exercice 2.1 - Utiliser le LanguageContext pour les traductions
-  
+  const { language } = useContext(LanguageContext);  
+  const translations = {
+    fr: {
+      loading: "Chargement...",
+      error: "Erreur",
+    },
+    en: {
+      loading: "Loading...",
+      error: "Error",
+    },
+  };
+
   const { 
     products, 
     loading, 
@@ -21,14 +32,14 @@ const ProductList = ({ searchQuery }) => {
   if (loading) return (
     <div className="text-center my-4">
       <div className="spinner-border" role="status">
-        <span className="visually-hidden">Chargement...</span>
+        <span className="visually-hidden">{translations[language].loading}</span> {/* Traduction du texte */}
       </div>
     </div>
   );
   
   if (error) return (
     <div className="alert alert-danger" role="alert">
-      Erreur: {error}
+      {translations[language].error}: {error}  {/* Traduction du texte */}
     </div>
   );
   
