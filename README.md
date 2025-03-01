@@ -54,7 +54,11 @@ Pour chaque exercice :
 _Votre réponse pour l'exercice 1 :_
 ```
 Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+1.1 - J'ai remonter le composant ProductSearch pour nous permet de filtrer les produits affichés selon la saisie utilisateur.
+1.2 - J'ai implémenter le debounce pour que l'utilisateur peut taper rapidement sans déclencher plusieurs requêtes.
+      La recherche s’exécute seulement après 400ms d’inactivité, évitant un rafraîchissement constant.
+![image](https://github.com/user-attachments/assets/0d587ccf-4245-4a33-a655-a6df91d74831)
+
 ```
 
 ### Exercice 2 : Context et Internationalisation
