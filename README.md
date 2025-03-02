@@ -71,7 +71,9 @@ Expliquez votre solution ici
 _Votre réponse pour l'exercice 2 :_
 ```
 Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+2.1 - J'ai crée un LanguageContext pour gérer la langue de l'application.
+2.2 - J'ai decider d'ajoute un sélecteur de langue dans le App.js pour permettre à l'utilisateur de changer la langue.
+      Apres j'ai utilise useContext(LanguageContext) dans les composants pour récupérer la langue actuelle et afficher les traductions appropriées.
 ```
 
 ### Exercice 3 : Hooks Personnalisés
