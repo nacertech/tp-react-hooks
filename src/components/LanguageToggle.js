@@ -5,16 +5,14 @@ const LanguageToggle = () => {
   const { language, setLanguage } = useContext(LanguageContext);  // Get the language and setter from context
 
   return (
-    <button
-      onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}  // Toggle between 'fr' and 'en'
-      className={`px-5 py-2 rounded ${
-        language === 'fr'
-          ? 'bg-dark text-light border border-light'  // French selected
-          : 'bg-light text-dark border border-dark'   // English selected
-      }`}
+    <select
+      value={language}
+      onChange={(e) => setLanguage(e.target.value)}
+      className="px-5 py-2 rounded border focus:outline-none ring-1 ring-primary"
     >
-      {language === 'fr' ? 'Français' : 'English'}  {/* Button text changes based on selected language */}
-    </button>
+      <option value="en">English</option>
+      <option value="fr">Français</option>
+    </select>
   );
 };
 

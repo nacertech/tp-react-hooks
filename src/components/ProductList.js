@@ -32,7 +32,7 @@ const ProductList = ({ searchQuery }) => {
   if (loading) return (
     <div className="text-center my-4">
       <div className="spinner-border" role="status">
-        <span className="visually-hidden">{translations[language].loading}</span> {/* Traduction du texte */}
+        <span className="visually-hidden">{translations[language].loading}</span>
       </div>
     </div>
   );

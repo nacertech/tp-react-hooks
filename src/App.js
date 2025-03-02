@@ -2,34 +2,28 @@ import React, { createContext, useState } from "react";
 import ProductList from "./components/ProductList";
 import ProductSearch from "./components/ProductSearch";
 import ThemeToggle from "./components/ThemeToggle";
-import LanguageToggle from './components/LanguageToggle';  // Import the LanguageToggle component
-
+import LanguageToggle from './components/LanguageToggle';
+import useLocalStorage from './hooks/useLocalStorage';
 // TODO: Exercice 2.1 - Créer le LanguageContext
 export const LanguageContext = createContext();
 
 export const ThemeContext = createContext();
 
+
 const App = () => {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isDarkTheme, setIsDarkTheme] = useLocalStorage('theme', false);
 
   const handleSearch = (query) => {
     setSearchQuery(query);
   };
 
   // TODO: Exercice 2.2 - Ajouter l'état pour la langue
-  const [language, setLanguage] = useState("fr"); // Par exemple, 'fr' pour le français
-
+  const [language, setLanguage] = useLocalStorage('language', 'fr');
   return (
     <ThemeContext.Provider value={{ isDarkTheme, setIsDarkTheme }}>
+      {/* TODO: Exercice 2.1 - Wrapper avec LanguageContext.Provider */}
       <LanguageContext.Provider value={{ language, setLanguage }}>
-        {" "}
-        {/* Wrapper avec LanguageContext.Provider */}
-        {/* TODO: Exercice 2.1 - Wrapper avec LanguageContext.Provider */}
-        <div className="d-flex justify-content-end gap-2">
-          <ThemeToggle />
-          <LanguageToggle />
-        </div>
         <div
           className={`container ${
             isDarkTheme ? "bg-dark text-light" : "bg-light"
@@ -40,6 +34,7 @@ const App = () => {
             <div className="d-flex justify-content-end gap-2">
               <ThemeToggle />
               {/* TODO: Exercice 2.2 - Ajouter le sélecteur de langue */}
+              <LanguageToggle />
             </div>
           </header>
           <main>
