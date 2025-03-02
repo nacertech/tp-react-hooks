@@ -53,7 +53,6 @@ Pour chaque exercice :
 
 _Votre réponse pour l'exercice 1 :_
 ```
-Expliquez votre solution ici
 1.1 - J'ai remonter le composant ProductSearch pour nous permet de filtrer les produits affichés selon la saisie utilisateur.
 1.2 - J'ai implémenter le debounce pour que l'utilisateur peut taper rapidement sans déclencher plusieurs requêtes.
       La recherche s’exécute seulement après 400ms d’inactivité, évitant un rafraîchissement constant.
@@ -70,7 +69,6 @@ Expliquez votre solution ici
 
 _Votre réponse pour l'exercice 2 :_
 ```
-Expliquez votre solution ici
 2.1 - J'ai crée un LanguageContext pour gérer la langue de l'application.
 2.2 - J'ai decider d'ajoute un sélecteur de langue dans le App.js pour permettre à l'utilisateur de changer la langue.
       Apres j'ai utilise useContext(LanguageContext) dans les composants pour récupérer la langue actuelle et afficher les traductions appropriées.
@@ -88,8 +86,10 @@ Expliquez votre solution ici
 
 _Votre réponse pour l'exercice 3 :_
 ```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+Les hooks personnalisés permettent :
+   De réutiliser du code logique sans dupliquer des useState, useEffect, etc.
+   D'améliorer la maintenabilité du code en gardant les composants propres et simples.
+   De faciliter les tests en isolant la logique dans des fichiers séparés.
 ```
 
 ### Exercice 4 : Gestion Asynchrone et Pagination
