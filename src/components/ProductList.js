@@ -5,15 +5,23 @@ import useProductSearch from '../hooks/useProductSearch';
 const ProductList = ({ searchQuery }) => {
   const { isDarkTheme } = useContext(ThemeContext);
   // TODO: Exercice 2.1 - Utiliser le LanguageContext pour les traductions
-  const { language } = useContext(LanguageContext);  
+  const { language } = useContext(LanguageContext);
   const translations = {
     fr: {
       loading: "Chargement...",
       error: "Erreur",
+      reload: "Recharger",
+      previous: "Précédent",
+      next: "Suivant",
+      page: "Page"
     },
     en: {
       loading: "Loading...",
       error: "Error",
+      reload: "Reload",
+      previous: "Previous",
+      next: "Next",
+      page: "Page"
     },
   };
 
@@ -22,7 +30,12 @@ const ProductList = ({ searchQuery }) => {
     loading, 
     error,
     // TODO: Exercice 4.1 - Récupérer la fonction de rechargement
+    reloadProducts,
     // TODO: Exercice 4.2 - Récupérer les fonctions et états de pagination
+    currentPage,
+    nextPage,
+    previousPage,
+    totalPages
   } = useProductSearch();
 
   const filteredProducts = products.filter(product =>
@@ -46,6 +59,15 @@ const ProductList = ({ searchQuery }) => {
   return (
     <div>
       {/* TODO: Exercice 4.1 - Ajouter le bouton de rechargement */}
+      <div className="text-center mb-4">
+        <button 
+          onClick={reloadProducts} 
+          className="px-4 py-2 text-light border border-black text-black rounded"
+        >
+          {translations[language].reload}
+        </button>
+      </div>
+
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {filteredProducts.map(product => (
           <div key={product.id} className="col">
@@ -72,27 +94,26 @@ const ProductList = ({ searchQuery }) => {
       </div>
       
       {/* TODO: Exercice 4.2 - Ajouter les contrôles de pagination */}
-      {/* Exemple de structure pour la pagination :
       <nav className="mt-4">
         <ul className="pagination justify-content-center">
-          <li className="page-item">
+          <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
             <button className="page-link" onClick={previousPage}>
-              Précédent
+              {translations[language].previous}
             </button>
           </li>
           <li className="page-item">
             <span className="page-link">
-              Page {currentPage} sur {totalPages}
+              {translations[language].page} {currentPage} / {totalPages}
             </span>
           </li>
-          <li className="page-item">
+          <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
             <button className="page-link" onClick={nextPage}>
-              Suivant
+              {translations[language].next}
             </button>
           </li>
         </ul>
       </nav>
-      */}
+     
     </div>
   );
 };

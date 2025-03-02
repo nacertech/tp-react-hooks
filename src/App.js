@@ -6,7 +6,6 @@ import LanguageToggle from './components/LanguageToggle';
 import useLocalStorage from './hooks/useLocalStorage';
 // TODO: Exercice 2.1 - Créer le LanguageContext
 export const LanguageContext = createContext();
-
 export const ThemeContext = createContext();
 
 

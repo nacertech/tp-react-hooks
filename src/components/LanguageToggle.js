@@ -8,7 +8,7 @@ const LanguageToggle = () => {
     <select
       value={language}
       onChange={(e) => setLanguage(e.target.value)}
-      className="px-5 py-2 rounded border focus:outline-none ring-1 ring-primary"
+      className="px-5 py-2 rounded border border-black"
     >
       <option value="en">English</option>
       <option value="fr">Français</option>
