@@ -101,8 +101,18 @@ Les hooks personnalisés permettent :
 
 _Votre réponse pour l'exercice 4 :_
 ```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+J'ai implémenté :
+   Un bouton de rechargement : Permet de recharger les produits affichés.
+   Un système de pagination : Permet de naviguer entre les pages de produits.
+Explication du fonctionnement
+   Rechargement	Le bouton "Recharger" rappelle la fonction fetchProducts() pour rafraîchir les produits.
+   Pagination	Les produits sont paginés avec currentPage, nextPage(), et previousPage().
+   Performance	L'état loading empêche les appels multiples inutiles à l'API.
+   Multilingue	Les boutons et messages d'erreur sont traduits avec translations[language].
+
+![image](https://github.com/user-attachments/assets/224f1258-132b-42b9-ae00-d137e122762d)
+![image](https://github.com/user-attachments/assets/dbde43a3-2f0f-41ce-b65a-92b4ff2a6e40)
+
 ```
 
 ## Rendu
